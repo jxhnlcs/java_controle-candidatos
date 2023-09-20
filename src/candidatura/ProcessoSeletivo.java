@@ -1,31 +1,63 @@
 package candidatura;
 
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ProcessoSeletivo {
 
   public static void main(String[] args) {
-    imprimirSelecionados();
+    String[] candidatos = { "Felipe", "Macia", "Julia", "Paulo", "Augusto" };
+
+    for (String candidato : candidatos) {
+      entrandoEmContato(candidato);
+    }
+  }
+
+  static void entrandoEmContato(String candidato) {
+    int tentativasRealizadas = 1;
+    boolean continuarTentando = true;
+    boolean atendeu = false;
+
+    do {
+      atendeu = atender();
+      continuarTentando = !atendeu;
+
+      if(continuarTentando)
+        tentativasRealizadas++;
+      else
+        System.out.println("Contato realizado com sucesso");
+
+    }while(continuarTentando && tentativasRealizadas < 3);
+
+    if(atendeu)
+      System.out.println("Conseguimos contato com " + candidato + " na " + tentativasRealizadas + " tentativa ");
+    else
+      System.out.println("Não conseguimos contato com " + candidato + ", com o número máximo de tentativas igual a " + tentativasRealizadas);
+  }
+
+  static boolean atender() {
+    return new Random().nextInt(3) == 1;
   }
 
   static void imprimirSelecionados() {
-    String[] candidatos = { "Felipe", "Macia", "Julia", "Paulo", "Augusto"};
+    String[] candidatos = { "Felipe", "Macia", "Julia", "Paulo", "Augusto" };
 
     System.out.println("Imprimindo a lista de candidatos informando o indice do elemento");
 
-    for(int i = 0; i < candidatos.length; i++) {
-      System.out.println("O candidato de número " + (i+1) + " é " + candidatos[i]);
+    for (int i = 0; i < candidatos.length; i++) {
+      System.out.println("O candidato de número " + (i + 1) + " é " + candidatos[i]);
     }
 
     System.out.println("Forma abreviada de interação for each");
 
-    for(String candidato: candidatos) {
+    for (String candidato : candidatos) {
       System.out.println("O candidato selecionado foi " + candidato);
     }
   }
 
   static void selecaoCandidatos() {
-    String[] candidatos = { "Felipe", "Macia", "Julia", "Paulo", "Augusto", "Mônica", "Fabricio", "Mirela", "Daniela", "Jorge" };
+    String[] candidatos = { "Felipe", "Macia", "Julia", "Paulo", "Augusto", "Mônica", "Fabricio", "Mirela", "Daniela",
+        "Jorge" };
 
     int candidatosSelecionados = 0;
     int candidatosAtual = 0;
@@ -33,7 +65,7 @@ public class ProcessoSeletivo {
     double salarioBase = 2000.0;
 
     while (candidatosSelecionados < 5 && candidatosAtual < candidatos.length) {
-      
+
       String candidato = candidatos[candidatosAtual];
       double salarioPretendido = valorPretendido();
 
