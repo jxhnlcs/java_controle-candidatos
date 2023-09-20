@@ -1,18 +1,24 @@
-## Getting Started
+# Processo Seletivo - Gerenciador de Candidaturas
+Este é um projeto simples em Java chamado "Processo Seletivo" que simula um processo de seleção de candidatos para uma vaga de emprego. O projeto inclui funções para entrar em contato com os candidatos, imprimir a lista de candidatos, selecionar candidatos com base em critérios de salário e analisar as pretensões salariais dos candidatos.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Funcionalidades
+Entrando em Contato com Candidatos
+A função entrandoEmContato tenta entrar em contato com os candidatos da lista e registra o número de tentativas realizadas. O objetivo é alcançar o candidato em até 3 tentativas. Se o contato for bem-sucedido, uma mensagem informando o sucesso é exibida.
 
-## Folder Structure
+### Imprimindo Lista de Candidatos
+A função imprimirSelecionados imprime a lista de candidatos e seus índices usando dois tipos diferentes de loops (for e for-each).
 
-The workspace contains two folders by default, where:
+### Seleção de Candidatos
+A função selecaoCandidatos simula a seleção de candidatos com base em suas pretensões salariais. Ela verifica se o salário pretendido pelos candidatos é compatível com um salário base e seleciona até 5 candidatos que atendem aos critérios.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### Análise de Candidato
+A função analisarCandidato compara o salário base com o salário pretendido de um candidato e decide se deve ligar para o candidato, fazer uma contra proposta ou aguardar outros resultados.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Como Utilizar
+Para utilizar este projeto simples, siga os seguintes passos:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+1. Abra o código-fonte em um ambiente de desenvolvimento Java.
 
-## Dependency Management
+2. Execute o método main na classe ProcessoSeletivo para iniciar a simulação.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+3. O programa irá interagir com os candidatos, imprimir a lista de candidatos, selecionar candidatos e analisar suas pretensões salariais.
