@@ -9,8 +9,7 @@ public class ProcessoSeletivo {
   }
 
   static void selecaoCandidatos() {
-    String[] candidatos = { "Felipe", "Macia", "Julia", "Paulo", "Augusto", "Mônica", "Fabricio", "Mirela", "Daniela",
-        "Jorge" };
+    String[] candidatos = { "Felipe", "Macia", "Julia", "Paulo", "Augusto", "Mônica", "Fabricio", "Mirela", "Daniela", "Jorge" };
 
     int candidatosSelecionados = 0;
     int candidatosAtual = 0;
